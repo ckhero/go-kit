@@ -1,0 +1,29 @@
+project: base-demo
+log:
+  level: debug
+mysql:
+  default:
+    host: 112.126.60.67
+    port: 3306
+    username: root
+    password: Consul@zkcm@001
+    database: fanli_order
+    logMode: true
+redis:
+  default:
+    host: 127.0.0.1
+    port: 6379
+    database: 2
+    maxIdle: 10
+    maxActive: 100
+    idleTimeout: 100
+registry:
+  name: "go.kit.api.base-demo"
+  address: ["127.0.0.1:2379"]
+  dialTimeout: 100
+  dialKeepAlive: 100
+  grpcAddr: "127.0.0.1:50003"
+jaeger:
+  name: "go.micro.api.base-demo-client"
+  host: "127.0.0.1"
+  port: 6831

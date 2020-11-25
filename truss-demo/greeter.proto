@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package go.micro.srv.greeter;
+
+option go_package = "protos";
+
+service Greeter {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+  rpc Buy(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  int64 code = 1;
+  string msg = 2;
+  HelloResponseData data = 3;
+}
+
+message HelloResponseData {
+  string greeting = 1;
+}

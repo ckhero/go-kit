@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package go.micro.srv.greeter;
+
+option go_package = "protos";
+
+service Demo {
+  rpc Hello2(HelloRequest1) returns (HelloResponse1) {}
+
+  rpc Hello1(HelloRequest2) returns (HelloResponse2) {}
+}
+
+message HelloRequest1 {
+  string name = 1;
+}
+
+message HelloResponse1 {
+  int64 code = 1;
+  string msg = 2;
+  HelloResponseData1 data = 3;
+}
+
+message HelloResponseData1 {
+  string greeting = 1;
+}
+
+message HelloRequest2 {
+  string name = 1;
+}
+
+message HelloResponse2 {
+  int64 code = 1;
+  string msg = 2;
+  HelloResponseData1 data = 3;
+}
